@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+
+
+  <title>shopping cart checkout - Bootdey.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore our diverse collection of Malayalam books in Kannur, Kerala. Find classics, contemporary literature, and more.">
+  
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+      <!-- ===============================================-->
+    <!--    template   -->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../template/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../template/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../template/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../template/assets/img/favicons/favicon-32x32.png">
+    <link rel="manifest" href="../template/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../template/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+    <!-- ===============================================-->
+    <!--   Template Stylesheets-->
+    <!-- ===============================================-->
+    <link href="template/assets/css/theme.css" rel="stylesheet" />
+
+    <!-- ===============================================-->
+    <!--    Nav Style  -->
+    <!-- ===============================================-->
+    <link rel="stylesheet" href="../nav/css/linearicons.css">
+    <link rel="stylesheet" href="../nav/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../nav/css/themify-icons.css">
+    <link rel="stylesheet" href="../nav/css/owl.carousel.css">
+    <link rel="stylesheet" href="../nav/css/nice-select.css">
+    <link rel="stylesheet" href="../nav/css/nouislider.min.css">
+    <link rel="stylesheet" href="../nav/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="../nav/css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="../nav/css/magnific-popup.css">
+    <link rel="stylesheet" href="../nav/css/main.css">
+
+
+    	<!-- ===============================================-->
+    <!--    Book details  -->
+    <!-- ===============================================-->
+	<link rel="icon" type="image/png" href="../bookdetails/images/icons/favicon.png"/>
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/fonts/linearicons-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/MagnificPopup/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../bookdetails/css/main.css">
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        body {
+          margin-top: 20px;
+          background: #eee;
+        }
+    
+        h3 {
+          font-size: 16px;
+        }
+
+        hr {
+          background-color: #000000;
+        }
+    
+        .text-navy {
+          color: #ffb30e;
+        }
+    
+        .cart-product-imitation {
+          text-align: center;
+          /* padding-top: 30px; */
+          /* height: 80px; */
+          width: 80px;
+          background-color: #f8f8f9;
+        }
+    
+        .product-imitation.xl {
+          padding: 120px 0;
+        }
+    
+        .product-desc {
+          padding: 20px;
+          position: relative;
+        }
+    
+        .ecommerce .tag-list {
+          padding: 0;
+        }
+    
+        .ecommerce .fa-star {
+          color: #d1dade;
+        }
+    
+        .ecommerce .fa-star.active {
+          color: #f8ac59;
+        }
+    
+        .ecommerce .note-editor {
+          border: 1px solid #e7eaec;
+        }
+    
+        table.shoping-cart-table {
+          margin-bottom: 0;
+        }
+    
+        table.shoping-cart-table tr td {
+          border: none;
+          text-align: right;
+        }
+    
+        table.shoping-cart-table tr td.desc,
+        table.shoping-cart-table tr td:first-child {
+          text-align: left;
+        }
+    
+        /* table.shoping-cart-table tr td:last-child {
+          width: 80px;
+        } */
+    
+        .ibox {
+          clear: both;
+          margin-bottom: 25px;
+          margin-top: 0;
+          padding: 0;
+        }
+    
+        .ibox.collapsed .ibox-content {
+          display: none;
+        }
+    
+        .ibox:after,
+        .ibox:before {
+          display: table;
+        }
+    
+        .ibox-title {
+          -moz-border-bottom-colors: none;
+          -moz-border-left-colors: none;
+          -moz-border-right-colors: none;
+          -moz-border-top-colors: none;
+          background-color: #ffffff;
+          border-color: #e7eaec;
+          border-image: none;
+          border-style: solid solid none;
+          border-width: 3px 0 0;
+          color: inherit;
+          margin-bottom: 0;
+          padding: 14px 15px 7px;
+          min-height: 48px;
+        }
+    
+        .ibox-content {
+          background-color: #ffffff;
+          color: inherit;
+          padding: 5px 20px 5px 20px;
+          border-color: #e7eaec;
+          border-image: none;
+          border-style: solid solid none;
+          border-width: 1px 0;
+        }
+    
+        .ibox-footer {
+          color: inherit;
+          border-top: 1px solid #e7eaec;
+          font-size: 90%;
+          background: #ffffff;
+          padding: 10px 15px;
+        }
+
+        @media (min-width: 991px){ 
+        .cartText {
+            display: none; } }
+
+        @media (max-width: 991px) {
+            .cartIcon {
+            display: none; } }
+
+    </style>
+
+
+      <style>
+
+        body {
+            background-color: #eee;
+        }
+        .mt-100{
+          margin-top:150px;
+        }
+        .card {
+            margin-bottom: 30px;
+            border: 0;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            letter-spacing: .5px;
+            border-radius: 8px;
+            -webkit-box-shadow: 1px 5px 24px 0 rgba(68,102,242,.05);
+            box-shadow: 1px 5px 24px 0 rgba(68,102,242,.05);
+        }
+        .card .card-header {
+            background-color: #fff;
+            border-bottom: none;
+            padding: 24px;
+            border-bottom: 1px solid #f6f7fb;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .card-header:first-child {
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+        }
+        .card .card-body {
+            padding: 30px;
+            background-color: transparent;
+        }
+        .btn-primary, .btn-primary.disabled, .btn-primary:disabled {
+            background-color: #4466f2!important;
+            border-color: #4466f2!important;
+        }
+
+      </style>
+
+
+</head>
+
+<body style="font-size: 14px;">
+
+      <!-- ============================================-->
+      <!-- Navbar ============================-->
+      <header class="header_area sticky-header">
+        <div class="main_menu" style="background-color: #ffffff;">
+          <nav class="navbar navbar-expand-lg navbar-light main_box">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h" href="/"><img class="" src="../nav/img/logo3.png" alt="Bookworm logo" style="width:160px"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse offset justify-content-end" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/book">Book</a></li>
+                  <li class="nav-item cartText"><a class="nav-link" href="/cart/<%= userDetails._id %>">Cart</a></li>
+                  <li class="nav-item cartIcon"><a class="nav-link" href="/cart/<%= userDetails._id %>"><i class="fas fa-shopping-cart"></i>
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"><i class="fas fa-user-circle me-2"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link" href="/myProfile/<%= userDetails._id %>"><%= userDetails.username %></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/wallet/<%= userDetails._id %>">Wallet</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/myOrder/<%= userDetails._id %>">My Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Navbar ============================-->
+      <!-- ============================================-->
+
+  <% if(count != 0) {%>
+  <div class="container mt-5 pt-5" style="background: rgb(248, 248, 248);">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <% orders.forEach((order) =>{ %>
+        <div id="order<%= order._id %>" class="row">
+          <div class="col-md-9">
+            <div class="ibox">
+              <div class="ibox-title d-flex justify-content-between align-items-center">
+                <h6>Order Id : <%= order?.orderId %></h6>
+                <% if( order.status == "Complete" && order.refundStatus != 'Approved') { %>
+                  <a href="/invoiceDownload/<%= order._id %>" class="text-muted" style="cursor: pointer;"><i class="fa fa-download"></i> Download Invoice</a>
+                <% } %>
+              </div>
+
+
+              <div class="ibox-content shadow rounded">
+                <div class="table-responsive">
+                  <% order.product.forEach(function(product) { %> 
+                  <table class="table shoping-cart-table">
+                    <tbody> 
+                        <tr>
+                          <td >
+                              <div class="cart-product-imitation">
+                                  <img src="../<%= product?.productId?.image1 %>" alt="" width="90">
+                              </div>
+                          </td>
+                          <td class="desc">
+                              <h4 class="w-bold">
+                              <a href="/book-details/<%= product?.productId?._id %>" class="text-navy">
+                                  <%= product?.productId?.bookName %>
+                              </a>
+                              </h4>
+                              <dl class=" m-b-none">
+                              <dt><%= product?.productId?.author?.authorName %></dt>
+                              <dd><%= product?.productId?.genre?.genreName %> | <%= product?.productId?.language %></dd>
+                              <% if (order.status === "Complete") { %>
+                                <dd><span class="rate-review-btn text-primary" 
+                                  data-toggle="modal" 
+                                  data-target="#rateReviewModal"
+                                  data-product-id="<%= product?.productId?._id %>"
+                                  data-book-name="<%= product?.productId?.bookName %>"
+                                  data-user-id="<%= userDetails._id %>"
+                                  style="cursor: pointer;">
+                                  Rate and Review Book
+                                </span>
+                              </dd>
+
+                              <% } %>
+                              </dl>
+
+                              
+
+
+                          </td>
+                          <td>
+                            Quantity : <%= product?.quantity %>
+                            
+                          </td>
+
+                        </tr>
+                    </tbody>
+                  </table>
+                  <% }) %>
+
+                   <!-- Rate and Review Modal -->
+                    <div class="modal fade" id="rateReviewModal" tabindex="-1" role="dialog" aria-labelledby="rateReviewModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="rateReviewModalLabel">Rate and Review Book</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="rateError"></div>
+                            <form id="rateReviewForm">
+                              <div class="form-group">
+                                <label for="rating">Rating</label>
+                                <select class="form-control" id="rating" name="rating">
+                                  <option value="1">1 star</option>
+                                  <option value="2">2 stars</option>
+                                  <option value="3">3 stars</option>
+                                  <option value="4">4 stars</option>
+                                  <option value="5">5 stars</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="reviewText">Review</label>
+                                <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
+                              </div>
+                              <input type="hidden" id="productId" name="productId" value="">
+                              <input type="hidden" id="booknameId" name="booknameId" value="">
+                              <input type="hidden" id="userId" name="userId" value="<%= userDetails._id %>">
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" id="rateClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="submitReview()">Submit Review</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                            
+                  <!-- /Rate and Review Modal -->
+
+                  
+
+
+                  <% if (order.status != "Complete" && order.status != "Delete") { %>
+                  <div id="orderCancel<%= order._id %>">
+                    <hr>
+                    <div class="m-t-sm d-flex justify-content-center mb-2">
+                      <a id="removeCart" onclick="orderDeleteSwal('<%= order?._id %>','<%= order?.orderId %>')" class="text-muted" style="cursor: pointer;"><i class="fa fa-trash"></i> Cancel Order</a>
+                      
+                      <script>
+                        function orderDeleteSwal(orderId, customOrderId) {
+                          // Display Swal dialog
+                          swal({
+                            title: "Are you sure?",
+                            text: `${customOrderId} Cancel or Not`,
+                            icon: "warning",
+                            buttons: {
+                              cancel: {
+                                text: "No",
+                                value: false,
+                                visible: true,
+                                className: "",
+                                closeModal: true,
+                              },
+                              confirm: {
+                                text: "Yes",
+                                value: true,
+                                visible: true,
+                                className: "",
+                                closeModal: true,
+                              },
+                            },
+                            dangerMode: true,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false,
+                          }).then((willDelete) => {
+                            if (willDelete) {
+                              orderDelete(orderId);
+                              swal("Order Deleted", "", "success");
+                              document.querySelector(".swal-footer").style.display = "flex";
+                              document.querySelector(".swal-footer").style.justifyContent = "center";
+                            } else {
+                              swal("Order Not Deleted", "", "info");
+                              document.querySelector(".swal-footer").style.display = "flex";
+                              document.querySelector(".swal-footer").style.justifyContent = "center";
+                            }
+                          });
+
+                          // Customize Swal dialog with CSS
+                          document.querySelector(".swal-button--confirm").style.backgroundColor = "red";
+                          document.querySelector(".swal-button--cancel").style.backgroundColor = "green";
+                          document.querySelector(".swal-footer").style.display = "flex";
+                          document.querySelector(".swal-footer").style.justifyContent = "center";
+                        }
+                      </script>
+                    </div>
+                  </div>
+                  <% } %>
+                  <% if (order.status === "Complete" && order.refundStatus === "nostatus") { %>
+                    <div id="orderRefund<%= order._id %>">
+                      <hr>
+                      <div class="m-t-sm d-flex justify-content-center mb-2" id="refundRemove">
+                        <a id="requestRefund" onclick="openRefundModal('<%= order._id %>','<%= order.orderId %>')" class="text-muted" style="cursor: pointer;"><i class="fa fa-money"></i> Request Return</a>
+                        
+                      </div>
+                    </div>
+                  <% } %>
+                  <% if (order.refundStatus === "Pending" || order.refundStatus === "Approved" || order.refundStatus === "Rejected") { %>
+              
+                      <div class="m-t-sm d-flex justify-content-center mb-2">
+                          <p>Refund Status: <%= order.refundStatus %></p>
+                      </div>
+                    
+                  <% } %>
+
+                  <!-- Refund Modal -->
+                  <div class="modal fade" id="refundModal" tabindex="-1" role="dialog" aria-labelledby="refundModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="refundModalLabel">Request Refund</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Refund request form -->
+                          <form id="refundForm">
+                            <div class="form-group">
+                              <label for="refundReason">Reason for Refund</label>
+                              <textarea class="form-control" id="refundReason" rows="3"></textarea>
+                            </div>
+                            <input type="hidden" id="orderId" value="">
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" onclick="requestRefund()">Submit Request</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <div class="ibox shadow rounded">
+              <div class="ibox-title">
+                <h6>Order Status</h6>
+              </div>
+              <div class="ibox-content">
+                <div class="d-flex justify-content-center mt-2">
+                <span class="me-3">
+                 Grand Total Amount : 
+                </span>
+                <h5 class="font-bold">
+                  ₹ <%= order?.totalAmount %>
+                </h5>
+              </div>
+            
+              <div class="d-flex justify-content-center mt-1">
+                <span class="me-3">
+                 Discount: 
+                </span>
+                <h6 class="">
+                  ₹ <%= order?.discountAmount %>
+                </h6>
+              </div>
+                <hr>
+                <% if (order.status != "Complete" && order.status != "Delete") { %>
+                  <div id="orderPaymentCancel<%= order?._id %>">
+                    <div class="btn btn-outline-danger d-flex justify-content-center">
+                      Payment Method : <%= order?.paymentMethod %>
+                    </div>
+                    <hr>
+                  </div>
+                <% } %>
+                <!-- <span class="text-muted"> -->
+                
+                  <% if(order.status == "Pending") {%>
+                    <div id="orderStatus<%= order?._id %>">
+                      <h5>
+                      <span class="badge bg-danger d-flex justify-content-center">
+                        Order Checking
+                      </span>
+                      </h5>
+                    </div>
+                  <% }else if(order.status == "On The Way"){ %>
+                    <div id="orderStatus<%= order?._id %>">
+                      <h5>
+                        <span class="badge bg-primary d-flex justify-content-center">
+                          <%= order?.status %>
+                        </span>
+                      </h5>
+                    </div>
+                  <% }else if(order.status == "Delete"){ %>
+                    <div id="orderStatus<%= order?._id %>">
+                      <h5>
+                        <span class="badge bg-dark d-flex justify-content-center">
+                          Cancelled Order
+                        </span>
+                      </h5>
+                    </div>
+                  <% }else{ %>
+                    <div id="orderStatus<%= order?._id %>">
+                      <h5>
+                        <span class="badge bg-success d-flex justify-content-center">
+                          Order Complete
+                        </span>
+                      </h5>
+                    </div>
+                  <% } %>
+                <!-- </span> -->
+              </div>
+              <% if (order.status != "Complete" || order.status != "Delete") { %>
+              <div class="ibox-content text-center">
+                <div>
+                  <h6>Address</h6>
+                  <span class="">
+                    <%= order?.address %>
+                  </span>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <% }else{ %>
+
+    <div class="container-fluid  mt-100">
+      <div class="row">
+      
+       <div class="col-md-12">
+  
+         <div class="card-body cart">
+             <div class="col-sm-12 empty-cart-cls text-center">
+               <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+               <h1><strong>Your Order is Empty</strong></h1>
+               <h2>Buy something to make me happy :)</h2>
+               <a href="/" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+             </div>
+         </div>
+
+       </div>
+         
+       
+      </div>
+      
+    </div>
+     
+  <% } %>
+
+
+  <script>
+    $(document).on("click", ".rate-review-btn", function() {
+      var productId = $(this).data("product-id");
+      var bookName = $(this).data("book-name");
+      $("#productId").val(productId);
+      $("#booknameId").val(bookName);
+    });
+  </script>
+
+
+
+  <script>
+
+
+
+function submitReview() {
+    const rating = document.getElementById('rating').value;
+    const reviewText = document.getElementById('reviewText').value;
+    const productId = document.getElementById('productId').value;
+    const userId = document.getElementById('userId').value;
+    const bookName = document.getElementById('booknameId').value;
+    const url = window.location.origin;
+
+    fetch(`${url}/addReview`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            productId: productId,
+            userId: userId,
+            rating: rating,
+            reviewText: reviewText,
+            bookName: bookName,
+        }),
+    })
+    .then(response => {
+        if (response.status === 200) {
+          return response.json().then((data) => {
+            document.getElementById('rateClose').click();
+            swal({
+              title: "Rating and Review Added",
+              text: `Your rating and review for the book ${data.bookName} has been added.`,
+              icon: "success",
+              button: "Okay",
+            });
+          })
+          
+        } else if (response.status === 400){
+          return response.json().then((data) => {
+            document.getElementById('rateError').innerHTML = 
+            `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>${data.message}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`;
+            setTimeout(() => {
+                document.getElementById('rateError').innerHTML = ""
+            }, 3000);
+          })
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting review:', error);
+        swal({
+          title: "Error",
+          text: "Failed to Submit Review",
+          icon: "error",
+          button: "Okay",
+        });
+    });
+}
+
+
+    function orderDelete(orderId) {
+      const url = window.location.origin;
+      console.log(url);
+      fetch(`${url}/orderDelete?orderId=${orderId}`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then((response)=>response)
+      .then((data)=>{
+        document.getElementById(`orderStatus${orderId}`).innerHTML = 
+                      `<h5><span class="badge bg-dark d-flex justify-content-center">
+                        Cancel Order
+                      </span></h5>`
+        document.getElementById(`orderPaymentCancel${orderId}`).innerHTML = "";
+        document.getElementById(`orderCancel${orderId}`).innerHTML = "";
+      })
+    }
+
+
+    function openRefundModal(orderId, customOrderId) {
+  $('#orderId').val(orderId);
+  $('#refundModal').modal('show');
+}
+
+function requestRefund() {
+  const orderId = $('#orderId').val();
+  const reason = $('#refundReason').val();
+
+  $.ajax({
+    type: 'POST',
+    url: '/requestRefund',
+    data: { orderId, reason },
+    success: function(response) {
+      $('#refundModal').modal('hide'); // Hide modal on success
+      location.reload(); // Reload the page
+    },
+    error: function(xhr, status, error) {
+      console.error('Error requesting refund:', error);
+      alert('Failed to request refund. Please try again.'); // Show error message
+    }
+  });
+}
+
+
+
+  </script>
+
+  <script type="text/javascript"></script>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  <!-- ===============================================-->
+  <!--    Nav JavaScripts-->
+  <!-- ===============================================-->
+  <script src="../nav/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+      integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+      crossorigin="anonymous"></script>
+  <script src="../nav/js/vendor/bootstrap.min.js"></script>
+  <script src="../nav/js/jquery.ajaxchimp.min.js"></script>
+  <script src="../nav/js/jquery.nice-select.min.js"></script>
+  <script src="../nav/js/jquery.sticky.js"></script>
+  <script src="../nav/js/nouislider.min.js"></script>
+  <script src="../nav/js/countdown.js"></script>
+  <script src="../nav/js/jquery.magnific-popup.min.js"></script>
+  <script src="../nav/js/owl.carousel.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+  <script src="../nav/js/gmaps.min.js"></script>
+  <script src="../nav/js/main.js"></script>
+
+
+  
+ 
+  <script type="text/javascript"></script>
+
+
+	<!-- ===============================================-->
+  <!--    Book details JavaScripts -->
+  <!-- ===============================================-->
+	<!-- <script src="../bookdetails/vendor/jquery/jquery-3.2.1.min.js"></script> -->
+	<script src="../bookdetails/vendor/animsition/js/animsition.min.js"></script>
+	<script src="../bookdetails/vendor/bootstrap/js/popper.js"></script>
+	<script src="../bookdetails/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../bookdetails/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+	<script src="../bookdetails/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../bookdetails/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="../bookdetails/vendor/slick/slick.min.js"></script>
+	<script src="../bookdetails/js/slick-custom.js"></script>
+	<script src="../bookdetails/vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+	<script src="../bookdetails/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+	<script src="../bookdetails/vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="../bookdetails/vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+	<script src="../bookdetails/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+	<script src="../bookdetails/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>

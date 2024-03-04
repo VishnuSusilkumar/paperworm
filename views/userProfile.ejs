@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+
+
+    <title>profile edit data and skills - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Review the terms and conditions of using Bookworm's website. Understand our policies and guidelines.">
+
+
+        <!-- ===============================================-->
+    <!--    Nav Style  -->
+    <!-- ===============================================-->
+    <link rel="stylesheet" href="../nav/css/linearicons.css">
+    <link rel="stylesheet" href="../nav/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../nav/css/themify-icons.css">
+    <link rel="stylesheet" href="../nav/css/owl.carousel.css">
+    <link rel="stylesheet" href="../nav/css/nice-select.css">
+    <link rel="stylesheet" href="../nav/css/nouislider.min.css">
+    <link rel="stylesheet" href="../nav/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="../nav/css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="../nav/css/magnific-popup.css">
+    <link rel="stylesheet" href="../nav/css/main.css">
+
+    <!-- ===============================================-->
+    <!--    template   -->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../template/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../template/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../template/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../template/assets/img/favicons/favicon-32x32.png">
+    <link rel="manifest" href="../template/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../template/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+
+
+    <!-- ===============================================-->
+    <!--   Template Stylesheets-->
+    <!-- ===============================================-->
+    <link href="template/assets/css/theme.css" rel="stylesheet" />
+
+
+ <!-- Cropper -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">     
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+
+        
+
+
+    <style type="text/css">
+        body {
+            background: #f7f7ff;
+            margin-top: 20px;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid transparent;
+            border-radius: .25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+        }
+
+        .me-2 {
+            margin-right: .5rem !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-item .active{
+            background-color: rgb(253, 165, 0);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .addressSelect{
+            color: black;
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+        .addressSelect:hover{
+            text-decoration: none;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+
+      <!-- ============================================-->
+      <!-- Navbar ============================-->
+      <header class="header_area sticky-header">
+        <div class="main_menu" style="background-color: #ffffff;">
+          <nav class="navbar navbar-expand-lg navbar-light main_box">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h" href="/"><img class="" src="../nav/img/logo3.png" alt="Bookworm logo" style="width:160px"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse offset justify-content-end" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/book">Book</a></li>
+                  <li class="nav-item cartText"><a class="nav-link" href="/cart/<%= userDetails._id %>">Cart</a></li>
+                  <li class="nav-item cartIcon"><a class="nav-link" href="/cart/<%= userDetails._id %>"><i class="fas fa-shopping-cart"></i>
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"><i class="fas fa-user-circle me-2"></i></a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link" href="/myProfile/<%= userDetails._id %>"><%= userDetails.username %></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/wallet/<%= userDetails._id %>">Wallet</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/myOrder/<%= userDetails._id %>">My Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                      </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Navbar ============================-->
+      <!-- ============================================-->
+
+        <!-- Warning -->
+    <% if(warning) {%>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= warning%>
+              </div>
+              <div class="modal-footer">
+                <a href=""><button type="button" class="btn btn-primary" id="closeBtn" data-dismiss="modal">Close</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% } %>
+
+    <div class="container mt-5 pt-5">
+        <div class="main-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <% if (!userDetails.userImage) { %>
+                                    <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
+                                        alt="<%= userDetails.username %>" class="rounded-circle p-1 bg-primary"
+                                        width="110">
+                                    <% }else{ %>
+                                        <img src="data:image/jpeg;base64,<%= userDetails.userImage %>" alt="<%= userDetails.username %>" class="rounded-circle p-1 bg-primary" width="110px">
+                                        <% } %>
+                                            <div class="mt-3">
+                                                <h4>
+                                                    <%= userDetails.username %>
+                                                </h4>
+                                                <p class="text-secondary mb-1">
+                                                    <%= userDetails.email %>
+                                                </p>
+                                                        <button class="btn btn-primary" data-toggle="modal"
+                                                        data-target="#changePassword">Change Password</button>
+                                                         <!-- Change user Image -->
+                                                         <div class="modal fade" id="changePassword"
+                                                            tabindex="-1" role="dialog"
+                                                            aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <!-- <form id="changePassword" action="/changePassword/<%= userDetails._id %>" method="post"> -->
+                                                                    <form id="changePassword">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"
+                                                                                id="exampleModalLongTitle">Change Password</h5>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div id="changePasswordMessage"></div>
+                                                                            <div class="form-outline mb-1">
+                                                                                <label class="form-label"
+                                                                                    for="typeUsernameX-1">Old Password
+                                                                                </label>
+                                                                                <input type="password" id="oldPassword" class="form-control form-control-lg" name="oldPassword"/>
+                                                                            </div>
+                                                                            <div class="form-outline mb-1">
+                                                                                <label class="form-label"
+                                                                                    for="typeUsernameX-1">New Password
+                                                                                </label>
+                                                                                <input type="password" id="newPassword" class="form-control form-control-lg" name="newPassword"/>
+                                                                                <label class="form-label"
+                                                                                    for="typeUsernameX-1">Conform Password
+                                                                                </label>
+                                                                                <input type="password" id="confPassword" class="form-control form-control-lg" name="confPassword"/>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="button"
+                                                                                class="btn btn-primary" onclick="changePasswordUser('<%= userDetails._id %>')">Change</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <button class="btn btn-danger" data-toggle="modal"
+                                                            data-target="#changeUser<%= userDetails._id %>">
+                                                            <% if (!userDetails.userImage) { %>
+                                                                Upload Image
+                                                            <% }else{ %>
+                                                                Update Image
+                                                            <% } %>
+                                                        </button>
+
+                                                        <!-- Change user Image -->
+                                                        <div class="modal fade" id="changeUser<%= userDetails._id %>"
+                                                            tabindex="-1" role="dialog"
+                                                            aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <form id="changeImage3"
+                                                                        action="/addUserImage/<%= userDetails._id %>"
+                                                                        method="post" enctype="multipart/form-data">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"
+                                                                                id="exampleModalLongTitle">Add User
+                                                                                Image</h5>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="form-outline mb-1">
+                                                                                <label class="form-label" for="typeUsernameX-1">Change Image</label>
+
+                                                                                <input type="hidden" id="croppedImageData" name="croppedImageData">
+
+                                                                                <input type="file" id="userImage" class="form-control form-control-lg" name="userImage" accept="image/png, image/jpeg, image/jpg" />
+                                                                                <input type="hidden" name="userImageLocation" value="<%= userDetails.userImage %>">
+                                                                                <img id="croppedImage" class="img-fluid" alt="Cropped Image Preview" style="width: 500px; height: 400px;">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">Change</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                            </div>
+                            </div>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body mb-5">
+                            <form id="userInfo" action="/editUser/<%= userDetails._id %>" method="post" onsubmit="return submitformUserInfo(event)">
+                                <h4 class="mb-5">User Info</h4>
+                                <div id="error"></div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">User Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" name="userName" id="userName" class="form-control"
+                                            value="<%= userDetails.username %>" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" name="email" id="email" class="form-control"
+                                            value="<%= userDetails.email %>" readonly>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="number" name="phoneNumber" id="phoneNumber" class="form-control"
+                                            value="<%= userDetails.phoneNumber %>" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Age</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="number" name="age" id="age" class="form-control"
+                                            value="<%= userDetails.age %>" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="submit" class="btn btn-primary px-4" value="Save Changes">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card mb-0">
+                                    <div class="card-body">
+                                    
+                                        <div class="tab01">
+                                            <!-- Nav tabs -->
+                                            <div class="d-flex justify-content-center">
+                                            <ul class="nav nav-tabs shadow" role="tablist">
+                                                <li class="nav-item p-b-10">
+                                                    <a class="addressSelect active" data-toggle="tab" href="#Permanent" role="tab" >Permanent Address</a>
+                                                </li>
+                        
+                                                <li class="nav-item p-b-10">
+                                                    <a class="addressSelect" data-toggle="tab" href="#additionalAddress" role="tab" >Other Address</a>
+                                                </li>
+                        
+                                            </ul>
+                                            </div>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content p-t-43">
+                                                <!-- - -->
+                                                <div class="tab-pane fade show active" id="Permanent" role="tabpanel">
+                                                    <div class="how-pos2 p-lr-15-md pt-4">
+                                                        <form id="permanentAddress">
+                                                        <!-- <form id="permanantAddress"> -->
+                                                            <div id="permanentAddressError"></div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">House No. / Name</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="text" name="houseName" id="houseName"
+                                                                        class="form-control"
+                                                                        value="<%= userDetails.address[0].houseName %>" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">Street Name</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="text" name="streetName" id="streetName"
+                                                                        class="form-control"
+                                                                        value="<%= userDetails.address[0].streetName %>" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">Town</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="text" name="town" id="town" class="form-control"
+                                                                        value="<%= userDetails.address[0].town %>" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">State</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="text" name="state" id="state" class="form-control"
+                                                                        value="<%= userDetails.address[0].state %>" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">Pin Code</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="number" name="zipCode" id="zipCode"
+                                                                        class="form-control" value="<%= userDetails.address[0].zipCode %>"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-sm-3">
+                                                                    <h6 class="mb-0">Country</h6>
+                                                                </div>
+                                                                <div class="col-sm-9 text-secondary">
+                                                                    <input type="text" name="country" id="country" class="form-control"
+                                                                        value="<%= userDetails.address[0].country %>" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="button" class="btn btn-primary px-4" value="Save Changes" onclick="return permanentUpdateAddress('<%= userDetails._id %>')">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                    
+                                                    </div>
+                                                </div>
+                        
+                                                <!-- - -->
+                                                <div class="tab-pane fade" id="additionalAddress" role="tabpanel">
+
+                                                    <% if (userDetails.address[0].address == true) { %>
+                                                        <div class="btn-group d-flex justify-content-center mx-5 my-3">
+                                                            <select id="address-select" onchange="showAddressDetails()">
+                                                                <option value="select">Select Address</option>
+                                                                <% for (let i = 1; i < userDetails.address.length; i++) { %>
+                                                                  <option id="<%= userDetails.address[i]._id %>" value="<%= userDetails.address[i]._id %>"><%= userDetails.address[i].houseName %>, <%= userDetails.address[i].town %>, <%= userDetails.address[i].country %></option>
+                                                                <% } %>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="how-pos2 p-lr-15-md pt-4">
+                                                            <form id="seleteAddress" style="display: none;" method="POST">
+                                                                <div id="otherAddressMessage"></div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">House No. / Name</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="text" name="houseName" id="selectHouseName"
+                                                                            class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">Street Name</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="text" name="streetName" id="selectStreetName"
+                                                                            class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">Town</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="text" name="town" id="selectTown" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">State</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="text" name="state" id="selectState" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">Pin Code</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="number" name="zipCode" id="selectZipCode" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-3">
+                                                                        <h6 class="mb-0">Country</h6>
+                                                                    </div>
+                                                                    <div class="col-sm-9 text-secondary">
+                                                                        <input type="text" name="country" id="selectCountry" class="form-control" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-3 d-flex justify-content-between" style="box-sizing: content-box;">
+                                                                        <div class="col-sm-9 text-secondary">
+                                                                            <input type="button" class="btn btn-primary" value="Save Changes" onclick="return otherUpdateAddress('<%= userDetails._id %>')">
+                                                                        </div>
+                                                                        <div class="col-sm-9 text-secondary">
+                                                                            <input type="button" id="deleteButton" onclick="deleteAddress('<%= userDetails._id %>')" class="btn btn-secondary" value="Delete">
+                                                                        </div>
+                                                                        <div class="col-sm-9 text-secondary">
+                                                                            <input type="button" class="btn btn-danger" value="Add Address" data-toggle="modal" data-target="#addAddressModal">
+                                                                        </div>
+
+                                                                        <script>
+                                                                            const myButton = document.querySelector('#deleteButton');
+                                                                            const addressId = document.getElementById('address-select').value; 
+                                                                            function deleteAddress(userId){
+
+                                                                                Swal.fire({
+                                                                                title: 'Are you sure?',
+                                                                                text: "You won't be able to revert this!",
+                                                                                icon: 'warning',
+                                                                                showCancelButton: true,
+                                                                                confirmButtonText: 'Yes, delete it!',
+                                                                                cancelButtonText: 'No, cancel!',
+                                                                                reverseButtons: true
+                                                                              }).then((result) => {
+                                                                                if (result.isConfirmed) {
+                                                                                    const url = window.location.origin;
+                                                                                    console.log(url);
+                                                                                    fetch(`${url}/deleteAddress/${addressId}`, 
+                                                                                    {
+                                                                                        method: 'POST',
+                                                                                        headers: {
+                                                                                        'Accept': 'application/json',
+                                                                                        'Content-Type': 'application/json'
+                                                                                        },
+                                                                                        body: JSON.stringify({
+                                                                                            userId
+                                                                                        })
+                                                                                    }).then((response)=>response.json())
+                                                                                    .then((data)=>{
+                                                                                        document.getElementById(`${userDetails.address[i]._id}`).remove()
+                                                                                    })
+                                                                                  Swal.fire(
+                                                                                    'Deleted!',
+                                                                                    'Your Address has been deleted.',
+                                                                                    'success'
+                                                                                  );
+                                                                                } else if (result.isDenied) {
+                                                                                  // User clicked on the "No" button
+                                                                                  Swal.fire(
+                                                                                    'Cancelled',
+                                                                                    'Your Address is safe :)',
+                                                                                    'info'
+                                                                                  )
+                                                                                }
+                                                                              });
+                                                                            };
+                                                                          </script>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div id="addAddress" class="text-secondary my-3" style="display: flex; justify-content: center;">
+                                                            <input type="submit" class="btn btn-danger px-4" value="Add Address" data-toggle="modal" data-target="#addAddressModal">
+                                                        </div>
+                                                    <% }else{ %>
+                                                        <div id="addAddress" class="col-sm-9 text-secondary">
+                                                            <input type="submit" class="btn btn-danger px-4" value="Add Address" data-toggle="modal" data-target="#addAddressModal">
+                                                        </div>
+                                                    <% } %>
+
+
+                                                    <!-- ============================================-->
+                                                    <!-- Add Address ============================-->
+
+                                                    <div class="modal fade" id="addAddressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                          <div class="modal-content">
+                                                            <form id="addOtherAddress" action="/addOtherAddress/<%= userDetails._id %>" method="post">
+                                                              <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Add Address</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                              </div>
+                                                              <div class="modal-body">
+                                                                <div class="form-outline mb-1">
+                                                                  <label class="form-label" for="addHouseName">House No / Name</label>
+                                                                  <input type="text" id="addHouseName" class="form-control form-control-lg" name="addHouseName" required/>
+                                                                  <label class="form-label" for="addStreetName">Street Name</label>
+                                                                  <input type="text" id="addStreetName" class="form-control form-control-lg" name="addStreetName" required/>
+                                                                  <label class="form-label" for="addTown">Town</label>
+                                                                  <input type="text" id="addTown" class="form-control form-control-lg" name="addTown" required/>
+                                                                  <label class="form-label" for="addState">State</label>
+                                                                  <input type="text" id="addState" class="form-control form-control-lg" name="addState" required/>
+                                                                  <label class="form-label" for="addCountry">Country</label>
+                                                                  <input type="text" id="addCountry" class="form-control form-control-lg" name="addCountry" required/>
+                                                                  <label class="form-label" for="addZipCode">Pin Code</label>
+                                                                  <input type="number" id="addZipCode" class="form-control form-control-lg" name="addZipCode" required/>
+                                                                </div>
+                                                              </div>
+                                                              <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Add</button>
+                                                              </div>
+                                                            </form>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+            
+                                                    <!-- Add Address ============================-->
+                                                    <!-- ============================================-->
+                                                </div>
+                        
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+
+        <!-- cropper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                    const input = document.getElementById('userImage');
+                    const image = document.getElementById('croppedImage');
+                    const cropper = new Cropper(image, {
+                        aspectRatio: 1,
+                        viewMode: 2,
+                        crop: function (event) {
+                            const canvas = cropper.getCroppedCanvas();
+                            const dataURL = canvas.toDataURL('image/jpeg');
+                            image.src = dataURL;
+                        
+                            // Set the hidden input value to the cropped image data
+                            const croppedInput = document.getElementById('croppedImageData');
+                            croppedInput.value = dataURL;
+                        }
+                    });
+                
+                    input.addEventListener('change', function (e) {
+                        const file = e.target.files[0];
+                    
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function (event) {
+                                image.src = event.target.result;
+                                cropper.replace(image.src);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                });
+
+
+            function showAddressDetails(){
+                const url = window.location.origin;
+                const addressId = document.getElementById('address-select').value;
+                if(addressId === "select"){
+                    document.getElementById('seleteAddress').style.display = "none"
+                    document.getElementById('addAddress').style.display = "flex"
+                }else{
+                    document.getElementById('seleteAddress').style.display = "block"
+                    document.getElementById('addAddress').style.display = "none"
+                }
+                console.log(url);
+                fetch(`${url}/selectAddress`, {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        addressId
+                    })
+                }).then((response)=>response.json())
+                .then((data)=>{
+                    document.getElementById('selectHouseName').value = data.address.houseName
+                    document.getElementById('selectStreetName').value = data.address.streetName
+                    document.getElementById('selectTown').value = data.address.town
+                    document.getElementById('selectState').value = data.address.state
+                    document.getElementById('selectZipCode').value = data.address.zipCode
+                    document.getElementById('selectCountry').value = data.address.country
+                })
+            }
+
+            function permanentUpdateAddress(userId){
+                const url = window.location.origin;
+                const houseName = document.getElementById('houseName').value
+                const streetName = document.getElementById('streetName').value
+                const town = document.getElementById('town').value
+                const state = document.getElementById('state').value
+                const zipCode = document.getElementById('zipCode').value
+                const country = document.getElementById('country').value
+                const selectErrorElement = document.querySelector('#permanentAddressError');
+
+                function hideErrorMessageother(){
+                    selectErrorElement.innerHTML="";
+                }
+                function showErrorMessageother(message){
+                    selectErrorElement.innerHTML =`<div class="alert alert-warning border border-warning d-flex w-80 justify-content-center fw-bold py-2" role="alert" >${message}</div>`;
+                    setTimeout(()=>{
+                        selectErrorElement.innerHTML =`<div></div>`
+                    },5000);
+                }
+
+                if(houseName === "" || houseName.trim()==""){
+                    showErrorMessageother("House Name is required");
+                    return false;
+                }
+                if(houseName.length >40){
+                    showErrorMessageother("Name must be less than 40");
+                    return false;
+                }
+                if(streetName === "" || streetName.trim()==""){
+                    showErrorMessageother("Street Name is required");
+                    return false;
+                }
+                if(streetName.length >30){
+                    showErrorMessageother("Street Name must be less than 30");
+                    return false;
+                }
+                if(town === "" || town.trim()==""){
+                    showErrorMessageother("Town is required");
+                    return false;
+                }
+                if(town.length >30){
+                    showErrorMessageother("Town must be less than 30");
+                    return false;
+                }
+                if(state === "" || state.trim()==""){
+                    showErrorMessageother("State is required");
+                    return false;
+                }
+                if(state.length >30){
+                    showErrorMessageother("State must be less than 30");
+                    return false;
+                }
+                if(country === "" || country.trim()==""){
+                    showErrorMessageother("Country is required");
+                    return false;
+                }
+                if(country.length >30){
+                    showErrorMessageother("Country must be less than 30");
+                    return false;
+                }
+                if(zipCode === "" || zipCode.trim() ==""){
+                    showErrorMessageother("Pin Code is required");
+                    return false;
+                }
+                if(zipCode.length <6 || zipCode.length >6 || zipCode.value <= 999999){
+                    showErrorMessageother("Incorrect Pin Code");
+                    return false;
+                }
+                hideErrorMessageother()
+
+                console.log(url);
+                fetch(`${url}/address/${userId}`, {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        houseName,
+                        streetName,
+                        town,
+                        state,
+                        country,
+                        zipCode
+                    })
+                }).then((response) => {
+                    if (response.status === 200) {
+                        return response.json().then((data) => {
+                            $('#permanentAddress');
+                            Swal.fire({
+                                title: 'Success',
+                                title: 'Permanent Address Saved',
+                                icon: 'success',
+                                buttons: true,
+                                buttons: 'Ok'
+                            })
+                        })
+                    }else if(response.status === 401){
+                        return response.json().then((data) => {
+                            Swal.fire({
+                                title: 'Warning',
+                                text: data.message,
+                                icon: 'warning',
+                                buttons: true,
+                                dangerMode: true,
+                                buttons: 'cancel'
+                            });
+                        });
+                    }
+                })
+            }
+
+            function otherUpdateAddress(userId){
+                const addressId = document.getElementById('address-select').value;
+                const url = window.location.origin;
+                const houseName = document.getElementById('selectHouseName').value
+                const streetName = document.getElementById('selectStreetName').value
+                const town = document.getElementById('selectTown').value
+                const state = document.getElementById('selectState').value
+                const zipCode = document.getElementById('selectZipCode').value
+                const country = document.getElementById('selectCountry').value
+                const selectErrorElement = document.querySelector('#otherAddressMessage');
+
+                function hideErrorMessageother(){
+                    selectErrorElement.innerHTML="";
+                }
+                function showErrorMessageother(message){
+                    selectErrorElement.innerHTML =`<div class="alert alert-warning border border-warning d-flex w-80 justify-content-center fw-bold py-2" role="alert" >${message}</div>`;
+                    setTimeout(()=>{
+                        selectErrorElement.innerHTML =`<div></div>`
+                    },5000);
+                }
+
+                if(houseName === "" || houseName.trim()==""){
+                    showErrorMessageother("House Name is required");
+                    return false;
+                }
+                if(houseName.length >40){
+                    showErrorMessageother("Name must be less than 40");
+                    return false;
+                }
+                if(streetName === "" || streetName.trim()==""){
+                    showErrorMessageother("Street Name is required");
+                    return false;
+                }
+                if(streetName.length >30){
+                    showErrorMessageother("Street Name must be less than 30");
+                    return false;
+                }
+                if(town === "" || town.trim()==""){
+                    showErrorMessageother("Town is required");
+                    return false;
+                }
+                if(town.length >30){
+                    showErrorMessageother("Town must be less than 30");
+                    return false;
+                }
+                if(state === "" || state.trim()==""){
+                    showErrorMessageother("State is required");
+                    return false;
+                }
+                if(state.length >30){
+                    showErrorMessageother("State must be less than 30");
+                    return false;
+                }
+                if(country === "" || country.trim()==""){
+                    showErrorMessageother("Country is required");
+                    return false;
+                }
+                if(country.length >30){
+                    showErrorMessageother("Country must be less than 30");
+                    return false;
+                }
+                if(zipCode === "" || zipCode.trim() ==""){
+                    showErrorMessageother("Pin Code is required");
+                    return false;
+                }
+                if(zipCode.length <6 || zipCode.length >6 || zipCode.value <= 999999){
+                    showErrorMessageother("Incorrect Pin Code");
+                    return false;
+                }
+                hideErrorMessageother()
+
+                console.log(url);
+                fetch(`${url}/updateAddress/${userId}`, {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        houseName,
+                        streetName,
+                        town,
+                        state,
+                        country,
+                        zipCode
+                    })
+                }).then((response) => {
+                    if (response.status === 200) {
+                        return response.json().then((data) => {
+                            $('#seleteAddress');
+                            Swal.fire({
+                                title: 'Success',
+                                title: 'Address Saved',
+                                icon: 'success',
+                                buttons: true,
+                                buttons: 'Ok'
+                            })
+                        })
+                    }else if(response.status === 401){
+                        return response.json().then((data) => {
+                            Swal.fire({
+                                title: 'Warning',
+                                text: data.message,
+                                icon: 'warning',
+                                buttons: true,
+                                dangerMode: true,
+                                buttons: 'cancel'
+                            });
+                        });
+                    }
+                })
+            }
+        
+            function changePasswordUser(userId) {
+                const oldPassword = document.getElementById('oldPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confPassword = document.getElementById('confPassword').value;
+
+                if(oldPassword === "" || oldPassword.trim()==""){
+                    swal.fire("Error!", "Old Password Input Fied Is Empty", "error");
+                    return false;
+                }
+                if(oldPassword.length < 6){
+                    swal.fire("Error!", "Old Password Minmum 6 Character Require", "error");
+                    return false;
+                }
+
+                let numberOldRegex = /\d/;
+                let letterOldRegex = /[a-zA-Z]/;
+                let specialCharOldRegex = /[@#$!%*?&]/;
+
+                if (!numberOldRegex.test(oldPassword)) {
+                    swal.fire("Error!", "Old password must contain at least one number", "error");
+                    return false;
+                }
+                
+                if (!letterOldRegex.test(oldPassword)) {
+                    swal.fire("Error!", "Old password must contain at least one letter", "error");
+                    return false;
+                }
+                
+                if (!specialCharOldRegex.test(oldPassword)) {
+                    swal.fire("Error!", "Old password must contain at least one special character", "error");
+                    return false;
+                }
+
+                if (oldPassword.length < 8 || oldPassword.length > 32) {
+                    showErrorMessage("Old password must be between 8 and 32 characters long");
+                    return false;
+                }
+
+
+                if(newPassword === "" || newPassword.trim()==""){
+                    swal.fire("Error!", "New Password Input Fied Is Empty", "error");
+                    return false;
+                }
+                
+                let numbernewRegex = /\d/;
+                let letternewRegex = /[a-zA-Z]/;
+                let specialCharnewRegex = /[@#$!%*?&]/;
+
+                if (!numbernewRegex.test(newPassword)) {
+                    swal.fire("Error!", "New password must contain at least one number", "error");
+                    return false;
+                }
+                
+                if (!letternewRegex.test(newPassword)) {
+                    swal.fire("Error!", "New password must contain at least one letter", "error");
+                    return false;
+                }
+                
+                if (!specialCharnewRegex.test(newPassword)) {
+                    swal.fire("Error!", "New password must contain at least one special character", "error");
+                    return false;
+                }
+
+                if (newPassword.length < 8 || newPassword.length > 32) {
+                    showErrorMessage("New password must be between 8 and 32 characters long");
+                    return false;
+                }
+
+
+                if(newPassword != confPassword){
+                    swal.fire("Error!", "Password are not correct", "error");
+                    return false;
+                }
+                const url = window.location.origin;
+                console.log(url);
+                fetch(`${url}/changePassword/${userId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        oldPassword,
+                        newPassword
+                    })
+                }).then((response) => {
+                    if (response.status === 200) {
+                        return response.json().then((data) => {
+                            $('#changePassword').modal('hide');
+                            $('.modal-backdrop').remove();
+                            Swal.fire({
+                                title: 'Success',
+                                title: 'Password Change Successful',
+                                icon: 'success',
+                                buttons: true,
+                                buttons: 'Ok'
+                            })
+                        })
+                    }else if(response.status === 401){
+                        return response.json().then((data) => {
+                            Swal.fire({
+                                title: 'Warning',
+                                text: data.message,
+                                icon: 'warning',
+                                buttons: true,
+                                dangerMode: true,
+                                buttons: 'cancel'
+                            });
+                        });
+                    }
+                })
+            }
+
+
+            function validateFile(input) {
+                let fileType = input.files[0].type;
+                if (fileType != "image/jpeg" && fileType != "image/png" && fileType != "image/jpg") {
+                    input.value = "";
+                    swal.fire("Invalid file format", "Please upload a JPEG, PNG, or JPG file.", "error");
+                }
+            }
+        </script>
+
+        
+
+        <script src="../javascripts/userinfovalidation.js"></script>
+        <script src="../javascripts/permanentaddressvalidation.js"></script>
+
+        <script type="text/javascript"></script>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+        <!-- ===============================================-->
+        <!--    Nav JavaScripts-->
+        <!-- ===============================================-->
+        <script src="../nav/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+        <script src="../nav/js/vendor/bootstrap.min.js"></script>
+        <script src="../nav/js/jquery.ajaxchimp.min.js"></script>
+        <script src="../nav/js/jquery.nice-select.min.js"></script>
+        <script src="../nav/js/jquery.sticky.js"></script>
+        <script src="../nav/js/nouislider.min.js"></script>
+        <script src="../nav/js/countdown.js"></script>
+        <script src="../nav/js/jquery.magnific-popup.min.js"></script>
+        <script src="../nav/js/owl.carousel.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="../nav/js/gmaps.min.js"></script>
+        <script src="../nav/js/main.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
