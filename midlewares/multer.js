@@ -4,7 +4,6 @@ const multer = require('multer');
 const sharp = require('sharp');
 const fs = require('fs');
 
-
 // Configuration for Multer
 const multerStorage = multer.diskStorage({ 
     destination: (req, file, cb) => { 
@@ -12,7 +11,8 @@ const multerStorage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
       const ext = file.mimetype.split('/')[1];
-      cb(null, `books/book-${file.fieldname}-${Date.now()}.${ext}`);
+      const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
+      cb(null, `books/book-${file.fieldname}-${uniqueSuffix}.${ext}`);
     }
 });
 
@@ -34,6 +34,7 @@ const upload = multer({
 });
 
 
+
 const cropImages = async (req, res, next) => {
   try {
     console.log('cropImage middleware called');
@@ -42,7 +43,9 @@ const cropImages = async (req, res, next) => {
       return next();
     }
 
-    await Promise.all(req.files.map(async (file, index) => {
+    // Use for-loop instead of map to easily handle errors
+    for (let i = 0; i < req.files.length; i++) {
+      const file = req.files[i];
       const filePath = file.path;
       console.log('Processing file:', filePath);
       
@@ -55,16 +58,17 @@ const cropImages = async (req, res, next) => {
           fit: sharp.fit.cover,
           position: sharp.strategy.entropy
         })
-        .toFile(croppedFilePath); 
+        .toFile(croppedFilePath);
 
-      fs.unlink(filePath, (err) => {
-        if (err) {
-          console.error('Error deleting original file:', err);
-        } else {
-          console.log('Original file deleted successfully:', filePath);
-        }
-      });
+        fs.unlink(filePath, (err) => {
+          if (err) {
+            console.error('Error deleting original file:', err);
+          } else {
+            console.log('Original file deleted successfully:', filePath);
+          }
+        });
 
+      // Rename cropped file to original filename
       fs.rename(croppedFilePath, filePath, (err) => {
         if (err) {
           console.error('Error renaming file:', err);
@@ -72,12 +76,12 @@ const cropImages = async (req, res, next) => {
           console.log('File cropped and saved:', filePath);
         }
       });
-    }));
+    }
 
     next();
   } catch (error) {
     console.error('Error in cropImage middleware:', error);
-    next(error);
+    next(error); // Pass error to error handling middleware
   }
 };
 
@@ -101,13 +105,13 @@ const singleImageCrop = (width, height) => {
         })
         .toFile(croppedFilePath); 
 
-      fs.unlink(filePath, (err) => {
-        if (err) {
-          console.error('Error deleting original file:', err);
-        } else {
-          console.log('Original file deleted successfully:', filePath);
-        }
-      });
+        fs.unlink(filePath, (err) => {
+          if (err) {
+            console.error('Error deleting original file:', err);
+          } else {
+            console.log('Original file deleted successfully:', filePath);
+          }
+        });
 
       fs.rename(croppedFilePath, filePath, (err) => {
         if (err) {
