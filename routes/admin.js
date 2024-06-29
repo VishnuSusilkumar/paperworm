@@ -31,7 +31,7 @@ router.get('/productManagement',midleware.adminSession,productController.renderP
 
 router.get('/addBook',midleware.adminSession,productController.renderAddBook);
 
-router.post('/addBook',upload.array('myFiles', 3),cropImages,productController.addBook);
+router.post('/addBook',upload.array('myFiles', 3),cropImages, productController.addBook);
 
 router.post('/editBook/:id',midleware.adminSession,productController.editBook);
 

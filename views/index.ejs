@@ -337,9 +337,32 @@
 										  </div>
 										</a>
 										<div class="options">
-										  <h6>
-											₹ <%= book.retailPrice %>
-										  </h6>
+                      <% if(book.offerType == 'productOffer') { %>
+                        <h6 class="p-3">
+                          <span style="text-decoration: line-through;">
+                            ₹ <%= book.price %>
+                          </span>
+                          <span>
+                            ₹ <%= book.retailPrice %> (-<%= book.discountOffer %>% discount)
+                          </span>
+                        </h6>
+                      
+                      <% } else if(book.offerType == 'categoryOffer') { %>
+                        <h6 class="p-3">
+                          <span style="text-decoration: line-through;">
+                            ₹ <%= book.price %>
+                          </span>
+                          <span>
+                            ₹ <%= book.retailPrice %> (-<%= book.discountOffer %>% discount)
+                          </span>
+                        </h6>
+                      <% } else{ %>
+                        <span class="mtext-102 cl2">
+                          <div class="mr-5 p-3 mtext-111 bg-7 cl10">
+                            ₹ <%= book.retailPrice %> 
+                          </div>
+                          </span>
+                      <% } %>
 										  <% if (book.stock > 0) { %>
 											<% if(userDetails) {%>
 											  <a id="addCart<%= book._id %>" onclick="addCart('<%= book._id %>','<%= userDetails._id %>')" style="cursor: pointer;">
@@ -540,9 +563,33 @@
                               </div>
                             </a>
                             <div class="options">
-                              <h6>
-                                ₹ <%= book.retailPrice %>
-                              </h6>
+                              <% if(book.offerType == 'productOffer') { %>
+                                <h6 class="p-3">
+                                  <span style="text-decoration: line-through;">
+                                    ₹ <%= book.price %>
+                                  </span>
+                                  <span>
+                                    ₹ <%= book.retailPrice %> (-<%= book.discountOffer %>% discount)
+                                  </span>
+                                </h6>
+                              
+                              <% } else if(book.offerType == 'categoryOffer') { %>
+                                <h6 class="p-3">
+                                  <span style="text-decoration: line-through;">
+                                    ₹ <%= book.price %>
+                                  </span>
+                                  <span>
+                                    ₹ <%= book.retailPrice %> (-<%= book.discountOffer %>% discount)
+                                  </span>
+                                </h6>
+                              <% } else{ %>
+                                <span class="mtext-102 cl2">
+                                  <div class="mr-5 p-3 mtext-111 bg-7 cl10">
+                                    ₹ <%= book.retailPrice %> 
+                                  </div>
+                                  </span>
+                              <% } %>
+
                               <% if (book.stock > 0) { %>
                                 <% if(userDetails) { %>
                                   <a id="addCart<%= book._id %>" onclick="addCart('<%= book._id %>','<%= userDetails._id %>')" style="cursor: pointer;">

@@ -57,7 +57,7 @@ const adminPanel = async (req, res) => {
     const totalOrder = await order.find().count();
     const completeOrder = await order.find({ status: "Complete" }).count();
     const pendingOrder = await order.find({ status: "Pending" }).count();
-    const onTheWayOrder = await order.find({ status: "On The way" }).count();
+    const onTheWayOrder = await order.find({ status: "On The Way" }).count();
 
     let totalRevenue = 0;
     for (let i = 0; i < orders.length; i++) {
@@ -239,6 +239,7 @@ const approveRefund = async (req, res) => {
 
     // Update the order's refund status to 'Approved'
     orders.refundStatus = 'Approved';
+    orders.status = 'Returned';
     await orders.save();
 
     const userDetails = await user.findOne({ _id: orders.user._id })

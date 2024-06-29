@@ -399,7 +399,7 @@
                   
 
 
-                  <% if (order.status != "Complete" && order.status != "Delete") { %>
+                  <% if (order.status != "Complete" && order.status != "Delete" && order.status != "Returned") { %>
                   <div id="orderCancel<%= order._id %>">
                     <hr>
                     <div class="m-t-sm d-flex justify-content-center mb-2">
@@ -562,6 +562,14 @@
                       <h5>
                         <span class="badge bg-dark d-flex justify-content-center">
                           Cancelled Order
+                        </span>
+                      </h5>
+                    </div>
+                  <% } else if(order.status ==  "Returned") { %>
+                    <div id="orderStatus<%= order?._id %>">
+                      <h5>
+                        <span class="badge bg-dark d-flex justify-content-center">
+                          Returned Order
                         </span>
                       </h5>
                     </div>
