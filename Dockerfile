@@ -1,17 +1,21 @@
-FROM node:14-alpine
+# Use the official Node.js image as the base image
+FROM node:18
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+# Create and change to the app directory
+WORKDIR /usr/src/app
 
-WORKDIR /home/node/app
-
+# Copy the package.json and package-lock.json files
 COPY package*.json ./
 
-USER node
+# Install the app dependencies
+RUN npm install
 
-RUN npm install --production
 
+# Copy the rest of the application code
 COPY . .
 
+# Expose the port the app runs on
 EXPOSE 3000
 
-CMD [ "node", "app.js" ]
+# Start the application
+CMD ["node", "app.js"]
